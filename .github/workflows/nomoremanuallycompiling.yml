@@ -12,7 +12,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v4 actions/upload-artifact@v4
+    - with:
+        name: my-artifact
+        path: /home/runner/work/SRB2-Linux-autobuilds/SRB2-Linux-autobuilds/bin
     - name: get libs
       run: sudo apt install make git gcc libsdl2-mixer-dev libpng-dev libcurl4-openssl-dev libgme-dev libopenmpt-dev libminiupnpc-dev
     - name: make
